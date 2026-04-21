@@ -1,37 +1,33 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: "en" }}" class="html" data-theme="{{ site.theme_config.appearance | default: "auto" }}">
-        {%- include head.html -%}
-  <body>
-    <main class="page-content" aria-label="Content">
-      <div class="w">
-        {{ content }}
-        {% if site.theme_config.appearance_toggle %}
-          {% include toggle_theme_button.html %}
-        {% endif %}
-        <div class="credits">
-          {%- if site.theme_config.show_copyright == true -%}
-          &copy;&nbsp;{{ "now" | date: "%Y" }}&nbsp;{{site.author}}
-          &nbsp;
-          •
-          &nbsp;
-          {%- endif -%}
-          {%- if site.soopr -%}
-          Powered by <a href="https://www.soopr.co" target="_blank" rel="noreferrer">Soopr</a>
-          &nbsp;
-          •
-          &nbsp;
-          {%- endif -%}
-          Theme&nbsp; <a href="https://github.com/abhinavs/moonwalk" target="_blank" rel="noreferrer">Moonwalk</a>
-        </div>
-      </div>
-    </main>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+        <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+        <title>{{ page.title }}</title>
 
-    {%- if site.soopr -%}
-      {%- if site.soopr.publish_token and jekyll.environment == "production" -%}
-        <script async defer data-soopr-token="{{site.soopr.publish_token}}" src="https://sdk.soopr.co/soopr.js"></script>
-      {%- else -%}
-        <script async defer src="https://sdk.soopr.co/soopr.js"></script>
-      {%- endif -%}
-    {%- endif -%}
-  </body>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">accueil</a></li>
+                <li><a href="/blog">blog</a></li>
+                <li><a href="/projets">travaux & projets</a></li>
+                <li><a href="/infos">infos</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            
+            {{ content }}
+
+        </div>
+        <footer>
+            <ul>
+                <li><a href="https://github.com/eugnie">github</a></li>
+                <li><a href="https://www.researchgate.net/profile/Eugenie-Capdepon">researchgate</a></li>
+            </ul>
+        </footer>
+    </body>
 </html>
